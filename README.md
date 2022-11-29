@@ -4,7 +4,9 @@
 
 默认IP：192.168.1.200
 
-默认用户名：rootwifi名为：Phicomm_n1
+登录密码用户名：root
+
+wifi名为：Phicomm_n1
 
 默认密码：password
 
