@@ -3,15 +3,25 @@
 ### 注意
 
 默认IP：192.168.1.200
+
 默认用户名：rootwifi名为：Phicomm_n1
+
 默认密码：password
+
 安装到EMMC及在线更新：系统-->晶晨宝盒
+
 `每个月1号早上8点自动更新`
+
 本项目编译固件适配斐讯 N1 盒子，如需刷机，可直接下载 releases 内固件。
+
 本项目克隆于：[iceyheart](https://github.com/iceyheart/N1-OpenWrt-Lede#n1-openwrt-%E8%BD%BB%E9%87%8F%E5%9B%BA%E4%BB%B6--%E6%97%81%E8%B7%AF%E4%B8%93%E7%94%A8-%E6%AF%8F%E5%91%A8%E4%BA%94%E6%97%A98%E7%82%B9%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0)
+
 修改项：
+
 1.增加docker插件
+
 2.开启wifi
+
 本项目使用 Github Actions 下载 [Lean](https://github.com/coolsnowwolf/lede) 的 Openwrt 源码仓库，进行云编译，使用[Flippy](https://github.com/ophub/flippy-openwrt-actions)大佬的脚本进行打包
 
 ### 样式功能
