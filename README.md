@@ -24,7 +24,7 @@ wifi名为：Phicomm_n1
 
 2.开启wifi
 
-本项目使用 Github Actions 下载 [Lean](https://github.com/coolsnowwolf/lede) 的 Openwrt 源码仓库，进行云编译，使用[Flippy](https://github.com/ophub/flippy-openwrt-actions)大佬的脚本进行打包
+本项目使用 Github Actions 下载 [Lede](https://github.com/coolsnowwolf/lede) 的 Openwrt 源码仓库，进行云编译，使用[Flippy](https://github.com/ophub/flippy-openwrt-actions)大佬的脚本进行打包
 
 ### 样式功能
 
