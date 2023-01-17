@@ -1,3 +1,8 @@
+#!/bin/bash
+
+cd openwrt
+
+cat >> .config <<EOF
 CONFIG_TARGET_armvirt=y
 CONFIG_TARGET_armvirt_64=y
 CONFIG_TARGET_armvirt_64_Default=y
@@ -72,3 +77,4 @@ CONFIG_DOCKER_NET_MACVLAN=y
 CONFIG_PACKAGE_luci-app-dockerman=y
 CONFIG_PACKAGE_luci-i18n-docker-zh-cn=y
 CONFIG_PACKAGE_luci-i18n-dockerman-zh-cn=y
+EOF
