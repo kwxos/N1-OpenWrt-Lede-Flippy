@@ -29,14 +29,20 @@ CONFIG_PACKAGE_dosfstools=y
 
 #docker
 CONFIG_PACKAGE_luci-app-docker=m  
+CONFIG_PACKAGE_luci-app-dockerman=y
 CONFIG_DOCKER_KERNEL_OPTIONS=y
 CONFIG_DOCKER_SECCOMP=y
 CONFIG_DOCKER_RES_SHAPE=y
 CONFIG_PACKAGE_docker-compose=y
 CONFIG_PACKAGE_luci-app-dockerman=y
+CONFIG_DOCKER_STO_EXT4=y
+CONFIG_DOCKER_NET_MACVLAN=y
+CONFIG_PACKAGE_docker=y
+CONFIG_PACKAGE_dockerd=y
+CONFIG_PACKAGE_luci-i18n-docker-zh-cn=y
+CONFIG_PACKAGE_luci-i18n-dockerman-zh-cn=y
+CONFIG_PACKAGE_luci-lib-docker=y
 
-#UU网游加速器
-CONFIG_PACKAGE_luci-app-uugamebooster=y
 
 # CONFIG_PACKAGE_etherwake is not set
 CONFIG_PACKAGE_f2fs-tools=y
@@ -224,22 +230,42 @@ CONFIG_boost-variant-release=y
 CONFIG_PACKAGE_kmod-nf-conntrack-netlink=y
 CONFIG_PACKAGE_nlbwmon=y
 
-#wifi
+# WIFI
+CONFIG_PACKAGE_brcmfmac-firmware-43430-sdio=y
+CONFIG_PACKAGE_brcmfmac-firmware-43455-sdio=y
+CONFIG_PACKAGE_brcmfmac-firmware-usb=y
 CONFIG_PACKAGE_wireless-regdb=y
+CONFIG_PACKAGE_kmod-nls-base=y
+#CONFIG_PACKAGE_kmod-b44=y #可能添加防火墙卡死
+CONFIG_PACKAGE_kmod-libphy=y
+CONFIG_PACKAGE_kmod-mii=y
+CONFIG_PACKAGE_kmod-mmc=y
+CONFIG_PACKAGE_kmod-ssb=y
+CONFIG_PACKAGE_kmod-usb-core=y
 CONFIG_PACKAGE_kmod-brcmfmac=y
 CONFIG_BRCMFMAC_SDIO=y
 CONFIG_BRCMFMAC_USB=y
 CONFIG_PACKAGE_kmod-brcmutil=y
 CONFIG_PACKAGE_kmod-cfg80211=y
-CONFIG_PACKAGE_kmod-mac80211=y
-CONFIG_PACKAGE_MAC80211_DEBUGFS=y
-CONFIG_PACKAGE_MAC80211_MESH=y
 CONFIG_PACKAGE_hostapd=y
 CONFIG_PACKAGE_hostapd-common=y
-CONFIG_PACKAGE_wpa-cli=m
-CONFIG_WPA_MSG_MIN_PRIORITY=3
 CONFIG_DRIVER_11N_SUPPORT=y
 CONFIG_DRIVER_11AC_SUPPORT=y
-CONFIG_PACKAGE_wpad-basic=m
+CONFIG_DRIVER_11W_SUPPORT=y
+CONFIG_PACKAGE_iw=y
+# WIFI end
+
+# Remove
+# CONFIG_TARGET_ROOTFS_CPIOGZ is not set
+# CONFIG_TARGET_ROOTFS_INITRAMFS is not set
+# CONFIG_TARGET_ROOTFS_EXT4FS is not set
+# CONFIG_TARGET_ROOTFS_SQUASHFS is not set
+# CONFIG_PACKAGE_kmod-fs-antfs is not set
+# CONFIG_PACKAGE_kmod-fs-ksmbd is not set
+# CONFIG_TARGET_IMAGES_GZIP is not set
+# CONFIG_PACKAGE_luci-app-qos is not set #流量服务质量(QoS)流控
+# CONFIG_v2ray-plugin_INCLUDE_GOPROXY is not set
+# CONFIG_XRAY_CORE_COMPRESS_GOPROXY is not set
+# CONFIG_UnblockNeteaseMusicGo_INCLUDE_GOPROXY is not set
 
 EOF
