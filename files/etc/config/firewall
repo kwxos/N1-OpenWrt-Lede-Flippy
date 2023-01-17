@@ -5,6 +5,8 @@ config defaults
 	option output 'ACCEPT'
 	option forward 'REJECT'
 	option fullcone '0'
+	option flow_offloading '1'
+	option flow_offloading_hw '0'
 
 config zone
 	option name 'lan'
@@ -17,15 +19,11 @@ config zone
 	option name 'wan'
 	list network 'wan'
 	list network 'wan6'
-	option input 'REJECT'
 	option output 'ACCEPT'
-	option forward 'REJECT'
 	option masq '1'
 	option mtu_fix '1'
-
-config forwarding
-	option src 'lan'
-	option dest 'wan'
+	option input 'ACCEPT'
+	option forward 'ACCEPT'
 
 config rule
 	option name 'Allow-DHCP-Renew'
@@ -167,33 +165,6 @@ config include 'openclash'
 	option path '/var/etc/openclash.include'
 	option reload '1'
 
-config rule 'openvpn'
-	option name 'openvpn'
-	option target 'ACCEPT'
-	option src 'wan'
-	option proto 'tcp udp'
-	option dest_port '1194'
-
-config zone 'vpn'
-	option name 'vpn'
-	option input 'ACCEPT'
-	option forward 'ACCEPT'
-	option output 'ACCEPT'
-	option masq '1'
-	option network 'vpn0'
-
-config forwarding 'vpntowan'
-	option src 'vpn'
-	option dest 'wan'
-
-config forwarding 'vpntolan'
-	option src 'vpn'
-	option dest 'lan'
-
-config forwarding 'lantovpn'
-	option src 'lan'
-	option dest 'vpn'
-
 config include 'passwall'
 	option type 'script'
 	option path '/var/etc/passwall.include'
@@ -202,11 +173,6 @@ config include 'passwall'
 config include 'passwall_server'
 	option type 'script'
 	option path '/var/etc/passwall_server.include'
-	option reload '1'
-
-config include 'shadowsocksr'
-	option type 'script'
-	option path '/var/etc/shadowsocksr.include'
 	option reload '1'
 
 config rule 'kms'
@@ -221,9 +187,38 @@ config include 'vssr'
 	option path '/var/etc/vssr.include'
 	option reload '1'
 
-config zone 'docker'
-	option input 'ACCEPT'
-	option output 'ACCEPT'
-	option forward 'ACCEPT'
-	option name 'docker'
-	list network 'docker'
+config forwarding
+	option dest 'wan'
+	option src 'lan'
+
+config redirect
+	option target 'DNAT'
+	option src 'wan'
+	option dest 'lan'
+	option proto 'tcp'
+	option src_dport '22'
+	option dest_ip '192.168.1.7'
+	option dest_port '22'
+	option name 'SSH'
+
+config redirect
+	option target 'DNAT'
+	option src 'wan'
+	option dest 'lan'
+	option proto 'tcp udp'
+	option src_dport '5700'
+	option dest_ip '192.168.3.5'
+	option dest_port '5700'
+	option name 'Forward5700'
+
+config redirect
+	option enabled '1'
+	option target 'DNAT'
+	option src 'wan'
+	option dest 'lan'
+	option proto 'tcp udp'
+	option src_dport '8080'
+	option dest_ip '192.168.3.5'
+	option dest_port '8080'
+	option name 'Forward8080'
+
