@@ -6,7 +6,7 @@
 
 登录密码用户名：root
 
-wifi名为：Phicomm_n1（wifi出问题了删掉，重新配置就好了）
+wifi名为：Phicomm_n1
 
 默认密码：password
 
