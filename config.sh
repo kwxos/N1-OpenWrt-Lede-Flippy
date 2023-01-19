@@ -79,7 +79,6 @@ CONFIG_PACKAGE_libzstd=y
 CONFIG_PACKAGE_losetup=y
 CONFIG_PACKAGE_lsattr=y
 CONFIG_PACKAGE_lsblk=y
-
 CONFIG_PACKAGE_parted=y
 CONFIG_PACKAGE_perl=y
 CONFIG_PACKAGE_perl-http-date=y
@@ -116,7 +115,6 @@ CONFIG_PACKAGE_perlbase-utf8=y
 CONFIG_PACKAGE_perlbase-xsloader=y
 CONFIG_PACKAGE_pv=y
 CONFIG_PACKAGE_redsocks2=y
-
 CONFIG_ZSTD_OPTIMIZE_O3=y
 CONFIG_boost-compile-visibility-hidden=y
 CONFIG_boost-runtime-shared=y
