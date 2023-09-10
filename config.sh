@@ -198,6 +198,12 @@ CONFIG_DRIVER_11N_SUPPORT=y
 CONFIG_DRIVER_11AC_SUPPORT=y
 CONFIG_DRIVER_11W_SUPPORT=y
 CONFIG_PACKAGE_iw=y
+#istore
+CONFIG_PACKAGE_luci-app-store=y
+CONFIG_PACKAGE_luci-app-quickstart=y
+#校园网
+CONFIG_PACKAGE_luci-app-mentohust=y
+CONFIG_PACKAGE_mentohust=y
 # WIFI end
 #docker
 CONFIG_PACKAGE_luci-app-docker=y
