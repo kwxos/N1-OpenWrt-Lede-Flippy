@@ -206,12 +206,10 @@ CONFIG_PACKAGE_luci-app-mentohust=y
 CONFIG_PACKAGE_mentohust=y
 # WIFI end
 #docker
-CONFIG_PACKAGE_luci-app-docker=y
 CONFIG_PACKAGE_docker-compose=y
-CONFIG_PACKAGE_docker-ce=y
-CONFIG_DOCKER_STO_EXT4=y
-CONFIG_DOCKER_NET_MACVLAN=y
+CONFIG_PACKAGE_docker=y
+CONFIG_PACKAGE_dockerd=y
+CONFIG_PACKAGE_luci-lib-docker=y
 CONFIG_PACKAGE_luci-app-dockerman=y
-CONFIG_PACKAGE_luci-i18n-docker-zh-cn=y
 CONFIG_PACKAGE_luci-i18n-dockerman-zh-cn=y
 EOF
