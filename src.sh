@@ -5,3 +5,4 @@ echo 'src-git SSRplus https://github.com/fw876/helloworld' >>feeds.conf.default
 echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 echo 'src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2' >>feeds.conf.default
 echo 'src-git istore https://github.com/linkease/istore;main' >> feeds.conf.default
+echo 'src-git istore https://github.com/linkease/istore-ui;main' >> feeds.conf.default
