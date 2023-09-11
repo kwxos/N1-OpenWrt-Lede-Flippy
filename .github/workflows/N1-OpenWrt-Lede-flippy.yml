@@ -31,7 +31,7 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         ref: main
 
@@ -40,7 +40,7 @@ jobs:
         DEBIAN_FRONTEND: noninteractive
       run: |
         docker rmi `docker images -q`
-        sudo rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/apt/sources.list.d
+        sudo rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/apt/sources.list.d /usr/local/lib/android /opt/ghc
         sudo -E apt-get -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php*
         sudo -E apt update -y
         sudo -E apt full-upgrade -y
@@ -106,10 +106,11 @@ jobs:
       env:
         OPENWRT_ARMVIRT: openwrt/bin/targets/*/*/*.tar.gz
         PACKAGE_SOC: s905d
-        KERNEL_VERSION_NAME: 5.15.48_6.0.2
+        KERNEL_VERSION_NAME: 5.15.48_6.1.6
         KERNEL_AUTO_LATEST: true
         WHOAMI: CHH
-
+        GH_TOKEN: ${{ secrets.RELEASES_TOKEN }}
+        
     - name: Create release
       uses: ncipollo/release-action@v1
       with:
@@ -127,15 +128,15 @@ jobs:
             安装到EMMC及在线更新：系统-->晶晨宝盒
             
     - name: Remove old Releases
-      uses: dev-drprasad/delete-older-releases@v0.1.0
+      uses: dev-drprasad/delete-older-releases@v0.2.0
       with:
-        keep_latest: 3
+        keep_latest: 10
         delete_tags: true
       env:
         GITHUB_TOKEN: ${{ secrets.RELEASES_TOKEN }}
         
     - name: Delete older workflow runs and artifacts
-      uses: Mattraks/delete-workflow-runs@main
+      uses: Mattraks/delete-workflow-runs@v2
       if: env.DELETE_ARTIFACTS == 'true'
       with:
           token: ${{ secrets.RELEASES_TOKEN }}
