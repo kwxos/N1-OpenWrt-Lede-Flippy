@@ -74,8 +74,6 @@ jobs:
     - name: Install feeds
       run: |
         cd openwrt && ./scripts/feeds install -a
-        ./scripts/feeds install libpcap
-        ./scripts/feeds install -d y -p istore luci-app-store
         
     - name: Load custom configuration
       run: |
