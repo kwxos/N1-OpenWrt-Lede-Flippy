@@ -111,12 +111,11 @@ CONFIG_PACKAGE_odhcpd_ipv6only_ext_cer_id=0
 CONFIG_PACKAGE_openssh-sftp-server=y
 #校园网
 CONFIG_PACKAGE_luci-app-mentohust=y
-CONFIG_PACKAGE_luci-app-netkeeper=y
-CONFIG_PACKAGE_luci-app-minieap=y
-CONFIG_PACKAGE_luci-app-syshu3c=y
 CONFIG_PACKAGE_luci-app-mwan3=y
 CONFIG_PACKAGE_luci-app-mwan3helper=y
 CONFIG_PACKAGE_luci-app-syncdial=y
+CONFIG_PACKAGE_luci-app-lucky=y
+CONFIG_PACKAGE_luci-app-netdata=y
 #istore
 CONFIG_PACKAGE_luci-app-store=y
 CONFIG_PACKAGE_luci-app-quickstart=y
