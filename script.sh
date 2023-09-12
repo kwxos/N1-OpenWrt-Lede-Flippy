@@ -6,8 +6,9 @@ cd openwrt
 # Add luci-theme-opentomcat
 svn co https://github.com/Leo-Jo-My/luci-theme-opentomcat.git package/lean/luci-theme-opentomcat
 # Add luci-theme-argon
-rm -rf package/lean/luci-theme-argon
+rm -rf package/lean/luci-theme-argon package/lean/luci-app-istorex package/lean/luci-app-lucky package/lean/luci-app-mentohust package/lean/luci-app-netdata package/lean/luci-app-quickstart package/lean/luci-app-store
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/lean/luci-theme-argon
+git clone https://github.com/kwxos/open-page.git package/lean/
 #Add amlogic管理
 svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/lean/luci-app-amlogic
 #Add luci-app-passwall
